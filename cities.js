@@ -25,7 +25,7 @@ $weatherForcast = "" ;
 $cityName = "";
 $("#btn").click(function () {
     $city = $("#cityName").val();
-    $.getJSON('http://dataservice.accuweather.com/locations/v1/cities/search?apikey=FocPImi2GA4iU9WvjJKQu3gB8zsjAFJ9%20&q=' + $city + '&details=false',
+    $.getJSON('http://dataservice.accuweather.com/locations/v1/cities/search?apikey='+ $config.MY_KEY+ + $city + '&details=false',
         function (data) {
             $locationKey = parseInt(data[0].Key);
             $cityName = data[0].LocalizedName;
