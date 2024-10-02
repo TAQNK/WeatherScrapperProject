@@ -29,16 +29,16 @@ $("#btn").click(function () {
         function (data) {
             $locationKey = parseInt(data[0].Key);
             $cityName = data[0].LocalizedName;
-            //city name and its location key is captured here 
+            //city name and its location key is captured here
 
             //now we will use the location key to get the weather forcast from the site .
-            $.getJSON('http://dataservice.accuweather.com/forecasts/v1/daily/1day/' + $locationKey + '?apikey=FocPImi2GA4iU9WvjJKQu3gB8zsjAFJ9',
+            $.getJSON(`http://dataservice.accuweather.com/forecasts/v1/daily/1day/' + $locationKey + '?apikey=${config.MY_KEY}`,
                 function (data) {
                     $weatherForcast = data['DailyForecasts'][0];
                     console.log($weatherForcast);
-                    //this capture the weather of that city 
+                    //this capture the weather of that city
 
-                    //now the data has been captured now its just to show to user on the screen 
+                    //now the data has been captured now its just to show to user on the screen
                     $("#response").html('<div class="mt-5 alert alert-success">City : '+$cityName+'<br>Date :'+$weatherForcast.Date+'<br>Day : '+$weatherForcast.Day.IconPhrase+'<br>Night : '+$weatherForcast.Night.IconPhrase+'<br>Temprature : ('+$weatherForcast.Temperature.Minimum.Value+' F to '+$weatherForcast.Temperature.Maximum.Value+' F)</div>');
                 }
             );
