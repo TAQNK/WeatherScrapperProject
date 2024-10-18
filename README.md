@@ -1,4 +1,4 @@
-# [Weather Scrapper Project](https://weatherScrapper.tansihqpal.com)
+# [Weather Scrapper Project](https://weatherscrapper.tanishqpal.com)
 
 ## Overview
 
